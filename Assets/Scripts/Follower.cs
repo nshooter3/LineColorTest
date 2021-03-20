@@ -40,4 +40,10 @@ public class Follower : MonoBehaviour
     {
         return Input.GetKey(KeyCode.Space);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("DIE");
+        GameState.instance.Die();
+    }
 }
