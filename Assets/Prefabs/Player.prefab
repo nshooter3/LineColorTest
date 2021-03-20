@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 0}
   maxSpeed: 9
+  winSpeed: 5
   acceleration: 0.2
   deceleration: 0.35
   offset: {x: 0, y: 0.15, z: 0}
