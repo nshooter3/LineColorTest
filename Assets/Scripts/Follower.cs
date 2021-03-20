@@ -15,6 +15,11 @@ public class Follower : MonoBehaviour
 
     bool enteringNewState = false;
 
+    public FollowerDebris followerDebrisPrefab;
+    private int debrisCountLow = 17;
+    private int debrisCountHigh = 23;
+    private int debrisCount;
+
     private void Start()
     {
         transform.position = pathCreator.path.GetPointAtDistance(0f) + offset;
@@ -58,7 +63,7 @@ public class Follower : MonoBehaviour
     {
         if (enteringNewState)
         {
-
+            enteringNewState = false;
         }
         MovePlayerAlongPath(winSpeed, false);
     }
@@ -68,6 +73,12 @@ public class Follower : MonoBehaviour
         if (enteringNewState)
         {
             followerRenderer.enabled = false;
+            debrisCount = Random.Range(debrisCountLow, debrisCountHigh);
+            for (int i = 0; i < debrisCount; i++)
+            {
+                Instantiate(followerDebrisPrefab, transform.position, Quaternion.identity);
+            }
+            enteringNewState = false;
         }
     }
 
