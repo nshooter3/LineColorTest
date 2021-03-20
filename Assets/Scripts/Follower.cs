@@ -11,8 +11,16 @@ public class Follower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distanceTravelled += speed * Time.deltaTime;
-        transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled) + offset;
-        transform.eulerAngles = pathCreator.path.GetRotationAtDistance(distanceTravelled).eulerAngles;
+        if (isMoving())
+        {
+            distanceTravelled += speed * Time.deltaTime;
+            transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled) + offset;
+            transform.eulerAngles = pathCreator.path.GetRotationAtDistance(distanceTravelled).eulerAngles;
+        }
+    }
+
+    public bool isMoving()
+    {
+        return Input.GetKey(KeyCode.Space);
     }
 }
