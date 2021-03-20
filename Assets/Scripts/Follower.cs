@@ -11,6 +11,9 @@ public class Follower : MonoBehaviour
     public float deceleration;
     float distanceTravelled;
     public Vector3 offset;
+    public Renderer followerRenderer;
+
+    bool enteringNewState = false;
 
     private void Start()
     {
@@ -53,12 +56,19 @@ public class Follower : MonoBehaviour
 
     private void WinUpdate()
     {
+        if (enteringNewState)
+        {
+
+        }
         MovePlayerAlongPath(winSpeed, false);
     }
 
     private void DieUpdate()
     {
-
+        if (enteringNewState)
+        {
+            followerRenderer.enabled = false;
+        }
     }
 
     private void MovePlayerAlongPath(float speed, bool rotate = true)
@@ -83,10 +93,12 @@ public class Follower : MonoBehaviour
             if (other.gameObject.layer == LayerMask.NameToLayer(LayerConstants.KillPlayerLayer))
             {
                 GameStateManager.instance.Die();
+                enteringNewState = true;
             }
             else if (other.gameObject.layer == LayerMask.NameToLayer(LayerConstants.EndLevelLayer))
             {
                 GameStateManager.instance.Win();
+                enteringNewState = true;
             }
         }
     }
