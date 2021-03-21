@@ -24,12 +24,14 @@ public class GameStateManager : MonoBehaviour
     public void Win()
     {
         gameState = GameState.Win;
+        CanvasManager.instance.ActivateWinScreen();
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Die()
     {
         gameState = GameState.Die;
+        CanvasManager.instance.ActivateLoseScreen();
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

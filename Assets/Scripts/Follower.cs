@@ -65,7 +65,7 @@ public class Follower : MonoBehaviour
         {
             enteringNewState = false;
         }
-        MovePlayerAlongPath(winSpeed, false);
+        MovePlayerAlongPath(winSpeed);
     }
 
     private void DieUpdate()
@@ -82,14 +82,11 @@ public class Follower : MonoBehaviour
         }
     }
 
-    private void MovePlayerAlongPath(float speed, bool rotate = true)
+    private void MovePlayerAlongPath(float speed)
     {
         distanceTravelled += speed * Time.deltaTime;
         transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, EndOfPathInstruction.Stop) + offset;
-        if (rotate)
-        {
-            transform.eulerAngles = pathCreator.path.GetRotationAtDistance(distanceTravelled).eulerAngles;
-        }
+        transform.eulerAngles = pathCreator.path.GetRotationAtDistance(distanceTravelled, EndOfPathInstruction.Stop).eulerAngles;
     }
 
     public bool isMoving()
