@@ -2,10 +2,11 @@
 
 public class FollowerDebris : MonoBehaviour
 {
+    public bool randomScale = true;
+
     private Rigidbody rb;
-    private Vector3 randomDirection = new Vector3();
-    float randomSpeedLow = 0.2f;
-    float randomSpeedHigh = 0.6f;
+    public float randomSpeedLow = 0.2f;
+    public float randomSpeedHigh = 0.6f;
 
     float scaleLow = 0.5f;
     float scaleHigh = 1.5f;
@@ -26,15 +27,15 @@ public class FollowerDebris : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        randomDirection.x = Random.value;
-        randomDirection.y = Random.value;
-        randomDirection.z = Random.value;
-        transform.Rotate(randomDirection);
+        transform.rotation = Random.rotation;
 
         rb.velocity = Vector3.one * Random.Range(randomSpeedLow, randomSpeedHigh);
 
-        scale = Random.Range(scaleLow, scaleHigh);
-        transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z) * scale;
+        if (randomScale)
+        {
+            scale = Random.Range(scaleLow, scaleHigh);
+            transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z) * scale;
+        }
         initScale = transform.localScale;
 
         curShrinkTime = maxShrinkTime;
