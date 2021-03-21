@@ -2273,75 +2273,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1d6a598d44d6a640b2db81776dd8e1e, type: 3}
---- !u!1001 &7405217096358159829
+--- !u!1001 &7024227232286122916
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7405217095677036705, guid: f6ef210b75b3338438b16a3b379e77e2,
+    - target: {fileID: 7024227232554119336, guid: c26622b68f16b4e4cb3436ae0f865846,
+        type: 3}
+      propertyPath: m_Name
+      value: CameraVerticalMount
+      objectReference: {fileID: 0}
+    - target: {fileID: 7024227232554119337, guid: c26622b68f16b4e4cb3436ae0f865846,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7405217095677036705, guid: f6ef210b75b3338438b16a3b379e77e2,
+    - target: {fileID: 7024227232554119337, guid: c26622b68f16b4e4cb3436ae0f865846,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 6.25
       objectReference: {fileID: 0}
-    - target: {fileID: 7405217095677036705, guid: f6ef210b75b3338438b16a3b379e77e2,
+    - target: {fileID: 7024227232554119337, guid: c26622b68f16b4e4cb3436ae0f865846,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.25
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7405217095677036705, guid: f6ef210b75b3338438b16a3b379e77e2,
+    - target: {fileID: 7024227232554119337, guid: c26622b68f16b4e4cb3436ae0f865846,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0033530637
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7405217095677036705, guid: f6ef210b75b3338438b16a3b379e77e2,
+    - target: {fileID: 7024227232554119337, guid: c26622b68f16b4e4cb3436ae0f865846,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8944682
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7405217095677036705, guid: f6ef210b75b3338438b16a3b379e77e2,
+    - target: {fileID: 7024227232554119337, guid: c26622b68f16b4e4cb3436ae0f865846,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.4470687
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7405217095677036705, guid: f6ef210b75b3338438b16a3b379e77e2,
+    - target: {fileID: 7024227232554119337, guid: c26622b68f16b4e4cb3436ae0f865846,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0067085847
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7405217095677036705, guid: f6ef210b75b3338438b16a3b379e77e2,
+    - target: {fileID: 7024227232554119337, guid: c26622b68f16b4e4cb3436ae0f865846,
         type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7405217095677036705, guid: f6ef210b75b3338438b16a3b379e77e2,
+    - target: {fileID: 7024227232554119337, guid: c26622b68f16b4e4cb3436ae0f865846,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 45
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7405217095677036705, guid: f6ef210b75b3338438b16a3b379e77e2,
+    - target: {fileID: 7024227232554119337, guid: c26622b68f16b4e4cb3436ae0f865846,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -180
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7405217095677036705, guid: f6ef210b75b3338438b16a3b379e77e2,
+    - target: {fileID: 7024227232554119337, guid: c26622b68f16b4e4cb3436ae0f865846,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7405217095677036708, guid: f6ef210b75b3338438b16a3b379e77e2,
-        type: 3}
-      propertyPath: m_Name
-      value: Main Camera
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f6ef210b75b3338438b16a3b379e77e2, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: c26622b68f16b4e4cb3436ae0f865846, type: 3}
 --- !u!1001 &7743569903586042865
 PrefabInstance:
   m_ObjectHideFlags: 0
