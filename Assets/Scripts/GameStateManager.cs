@@ -41,7 +41,7 @@ public class GameStateManager : MonoBehaviour
 
     private IEnumerator RestartLevelCoroutine()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
