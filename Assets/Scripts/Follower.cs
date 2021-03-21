@@ -45,6 +45,7 @@ public class Follower : MonoBehaviour
                 DieUpdate();
                 break;
         }
+        CanvasManager.instance.SetProgressSlider(Mathf.Min(1f, distanceTravelled / totalDistance));
         pathMat.SetFloat("_Progress", Mathf.Min(1f, distanceTravelled / totalDistance));
     }
 

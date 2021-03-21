@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class CanvasManager : MonoBehaviour
 
     public EndScreen winScreen;
     public EndScreen loseScreen;
+    public Slider progressSlider;
 
     private float winEndScreenDelay = 2.0f;
     private float loseEndScreenDelay = 1.5f;
@@ -43,5 +45,10 @@ public class CanvasManager : MonoBehaviour
     {
         yield return new WaitForSeconds(loseEndScreenDelay);
         loseScreen.StartEndScreen();
+    }
+
+    public void SetProgressSlider(float progress)
+    {
+        progressSlider.value = progress;
     }
 }
