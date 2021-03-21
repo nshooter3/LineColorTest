@@ -13,6 +13,8 @@ public class Follower : MonoBehaviour
     public Vector3 offset;
     public Renderer followerRenderer;
 
+    private float totalDistance;
+
     bool enteringNewState = false;
 
     public FollowerDebris followerDebrisPrefab;
@@ -20,9 +22,12 @@ public class Follower : MonoBehaviour
     private int debrisCountHigh = 23;
     private int debrisCount;
 
+    public Material pathMat;
+
     private void Start()
     {
         transform.position = pathCreator.path.GetPointAtDistance(0f) + offset;
+        totalDistance = pathCreator.path.length;
     }
 
     // Update is called once per frame
@@ -40,6 +45,7 @@ public class Follower : MonoBehaviour
                 DieUpdate();
                 break;
         }
+        pathMat.SetFloat("_Progress", Mathf.Min(1f, distanceTravelled / totalDistance));
     }
 
     private void PlayingUpdate()
