@@ -11,7 +11,7 @@ public class CanvasManager : MonoBehaviour
     public Slider progressSlider;
     public LoseScreenProgressMessage loseScreenProgressMessage;
 
-    private float winEndScreenDelay = 1.5f;
+    private float winEndScreenDelay = 3.5f;
     private float loseEndScreenDelay = 1.0f;
 
     private void Awake()
