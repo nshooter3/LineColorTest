@@ -9,13 +9,13 @@ public class Follower : MonoBehaviour
     private float currentSpeed;
     public float acceleration;
     public float deceleration;
-    float distanceTravelled;
     public Vector3 offset;
     public Renderer followerRenderer;
 
+    private float distanceTravelled;
     private float totalDistance;
 
-    bool enteringNewState = false;
+    private bool enteringNewState = false;
 
     public FollowerDebris followerDebrisPrefab;
     private int debrisCountLow = 17;
@@ -45,8 +45,13 @@ public class Follower : MonoBehaviour
                 DieUpdate();
                 break;
         }
-        CanvasManager.instance.SetProgressSlider(Mathf.Min(1f, distanceTravelled / totalDistance));
-        pathMat.SetFloat("_Progress", Mathf.Min(1f, distanceTravelled / totalDistance));
+        CanvasManager.instance.SetProgressSlider(Mathf.Min(1f, GetPlayerProgress()));
+        pathMat.SetFloat("_Progress", Mathf.Min(1f, GetPlayerProgress()));
+    }
+
+    private float GetPlayerProgress()
+    {
+        return Mathf.Min(1f, distanceTravelled / totalDistance);
     }
 
     private void PlayingUpdate()
@@ -107,7 +112,7 @@ public class Follower : MonoBehaviour
         {
             if (other.gameObject.layer == LayerMask.NameToLayer(LayerConstants.KillPlayerLayer))
             {
-                GameStateManager.instance.Die();
+                GameStateManager.instance.Die(GetPlayerProgress());
                 enteringNewState = true;
             }
             else if (other.gameObject.layer == LayerMask.NameToLayer(LayerConstants.EndLevelLayer))

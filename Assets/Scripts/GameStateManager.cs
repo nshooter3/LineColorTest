@@ -28,10 +28,10 @@ public class GameStateManager : MonoBehaviour
         CanvasManager.instance.ActivateWinScreen();
     }
 
-    public void Die()
+    public void Die(float completion)
     {
         gameState = GameState.Die;
-        CanvasManager.instance.ActivateLoseScreen();
+        CanvasManager.instance.ActivateLoseScreen(completion);
     }
 
     public void RestartLevel()

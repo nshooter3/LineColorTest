@@ -644,8 +644,9 @@ GameObject:
   - component: {fileID: 1604913446620172299}
   - component: {fileID: 1604913446620172293}
   - component: {fileID: 1604913446620172298}
+  - component: {fileID: 1854101001}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ProgressMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -711,6 +712,19 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 20% Complete
+--- !u!114 &1854101001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604913446620172296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afeb18c6676b03145b1ea4a984087821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1604913446620172298}
 --- !u!1 &1604913446667191351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,6 +1250,7 @@ MonoBehaviour:
   winScreen: {fileID: 4889042351774447967}
   loseScreen: {fileID: 7135081337111303900}
   progressSlider: {fileID: 792204396}
+  loseScreenProgressMessage: {fileID: 1854101001}
 --- !u!1 &1604913447073764557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,7 +1337,7 @@ GameObject:
   - component: {fileID: 1604913447139791786}
   - component: {fileID: 1604913447139791787}
   m_Layer: 5
-  m_Name: Text
+  m_Name: VictoryMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

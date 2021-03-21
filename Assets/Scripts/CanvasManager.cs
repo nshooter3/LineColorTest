@@ -9,6 +9,7 @@ public class CanvasManager : MonoBehaviour
     public EndScreen winScreen;
     public EndScreen loseScreen;
     public Slider progressSlider;
+    public LoseScreenProgressMessage loseScreenProgressMessage;
 
     private float winEndScreenDelay = 1.5f;
     private float loseEndScreenDelay = 1.5f;
@@ -36,9 +37,10 @@ public class CanvasManager : MonoBehaviour
         winScreen.StartEndScreen();
     }
 
-    public void ActivateLoseScreen()
+    public void ActivateLoseScreen(float completion)
     {
         StartCoroutine(ActivateLoseScreenCoroutine());
+        loseScreenProgressMessage.SetLoseMessage(completion);
     }
 
     private IEnumerator ActivateLoseScreenCoroutine()
