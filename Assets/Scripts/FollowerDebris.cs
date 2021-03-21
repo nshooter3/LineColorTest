@@ -18,6 +18,10 @@ public class FollowerDebris : MonoBehaviour
     private float curShrinkTime;
     private float maxShrinkTime = 0.25f;
 
+    private float minYPos = -0.49f;
+
+    public GameObject splashPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +54,16 @@ public class FollowerDebris : MonoBehaviour
         }
         else
         {
+            Destroy(gameObject);
+        }
+
+        if (transform.position.y <= minYPos)
+        {
+            Vector3 splashPos = transform.position;
+            splashPos.y = minYPos;
+
+            Instantiate(splashPrefab, splashPos, Quaternion.identity);
+
             Destroy(gameObject);
         }
     }
