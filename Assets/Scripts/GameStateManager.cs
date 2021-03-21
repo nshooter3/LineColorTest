@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
@@ -25,13 +26,22 @@ public class GameStateManager : MonoBehaviour
     {
         gameState = GameState.Win;
         CanvasManager.instance.ActivateWinScreen();
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Die()
     {
         gameState = GameState.Die;
         CanvasManager.instance.ActivateLoseScreen();
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void RestartLevel()
+    {
+        StartCoroutine(RestartLevelCoroutine());
+    }
+
+    private IEnumerator RestartLevelCoroutine()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
