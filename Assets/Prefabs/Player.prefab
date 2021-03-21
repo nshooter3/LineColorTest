@@ -4866,7 +4866,7 @@ MonoBehaviour:
   maxSpeed: 8
   winSpeed: 5
   acceleration: 0.25
-  deceleration: 0.25
+  deceleration: 0.35
   offset: {x: 0, y: 0.15, z: 0}
   followerRenderer: {fileID: 7743569903653778088}
   followerDebrisPrefab: {fileID: 1817096094743778872, guid: 984dbf6ebb5e3a940888642d20e2925e,
