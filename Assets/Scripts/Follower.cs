@@ -24,6 +24,8 @@ public class Follower : MonoBehaviour
 
     public Material pathMat;
 
+    private bool isTouchingScreen;
+
     private void Start()
     {
         transform.position = pathCreator.path.GetPointAtDistance(0f) + offset;
@@ -33,6 +35,7 @@ public class Follower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DetectTouchInput();
         switch (GameStateManager.instance.gameState)
         {
             case GameStateManager.GameState.Playing:
@@ -47,6 +50,25 @@ public class Follower : MonoBehaviour
         }
         CanvasManager.instance.SetProgressSlider(Mathf.Min(1f, GetPlayerProgress()));
         pathMat.SetFloat("_Progress", Mathf.Min(1f, GetPlayerProgress()));
+    }
+
+    private void DetectTouchInput()
+    {
+        // Handle screen touches.
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Began)
+            {
+                isTouchingScreen = true;
+            }
+
+            if (touch.phase == TouchPhase.Ended)
+            {
+                isTouchingScreen = false;
+            }
+        }
     }
 
     private float GetPlayerProgress()
@@ -103,7 +125,7 @@ public class Follower : MonoBehaviour
 
     public bool isMoving()
     {
-        return Input.GetKey(KeyCode.Space);
+        return Input.GetKey(KeyCode.Space) || isTouchingScreen;
     }
 
     private void OnTriggerEnter(Collider other)
